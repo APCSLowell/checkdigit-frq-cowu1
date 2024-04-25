@@ -7,11 +7,12 @@ public class CheckDigit
    */  
    public static int getCheck(int num) 
    {  
-     int result = 0;
-     int numD = getNumberOfDigits(num);
-     for (int i = 0; i< numD; i++)
-       result = result + (8-i)*getDigit(num, i);
-    return result%10;
+    int sum = 0;
+for (int i = 1; i <= getNumberOfDigits(num); i++)
+{
+sum += (8 - i) * getDigit(num, i);
+}
+return sum % 10;
    }
  
   /** Returns true if numWithCheckDigit is valid, or false    
